@@ -1,8 +1,9 @@
+import pandas as pd 
+
 import dash
 import dash_bootstrap_components as dbc
 import dash_core_components as dcc
 import dash_html_components as html
-import pandas as pd 
 import dash_table
 
 import plotly.graph_objs as go
@@ -77,51 +78,51 @@ homepage_body = dbc.Container(
                         html.H2("About Mental Health Survey Data"),
                         html.P(
                             """\
-This data set is taken from Kaggle. This is a dataset from a 2014 survey (over 1200 responses recieved) that measures attitudes towards mental health and frequency of mental health disorders in workplaces. Goal
-Our goal is to find out the key factors to mental health problems in the workplace. We are going to perform some descriptive analysis on the survey data and predict treatment based on predictors. This will help in finding out methods to improve worker's experience in a tech workplace.
-"""),
-html.P(
-                            """\
-Describing the Data:There are altogether 1200 rows i.e. observations and 27 Columns which are given below :\n
-"""),
-html.P("""1. Timestamp """),
-html.P("""2. Age"""),
-html.P("""3. Gender"""),
-html.P("""4. Country"""),
-html.P("""5. state: If you live in the United States, which state or territory do you live in?"""),
-html.P("""6.self_employed: Are you self-employed?"""),
-html.P("""7. family_history: Do you have a family history of mental illness?"""),
-html.P("""8. treatment: Have you sought treatment for a mental health condition?"""),
-html.P("""9. work_interfere: If you have a mental health condition, do you feel that it interferes with your work?"""),
-html.P("""10. no_employees: How many employees does your company or organization have?"""),
-html.P("""11. remote_work: Do you work remotely (outside of an office) at least 50% of the time?"""),
-html.P("""12. tech_company: Is your employer primarily a tech company/organization?"""),
-html.P("""13. benefits: Does your employer provide mental health benefits?"""),
-html.P("""14. care_options: Do you know the options for mental health care your employer provides?"""),
-html.P("""15. wellness_program: Has your employer ever discussed mental health as part of an employee wellness program?"""),
-html.P("""16. seek_help: Does your employer provide resources to learn more about mental health issues and how to seek help?"""),
-html.P("""17. anonymity: Is your anonymity protected if you choose to take advantage of mental health or substance abuse treatment resources?"""),
-html.P("""18. leave: How easy is it for you to take medical leave for a mental health condition?"""),
-html.P("""19. mental_health_consequence: Do you think that discussing a mental health issue with your employer would have negative consequences?"""),
-html.P("""20. phys_health_consequence: Do you think that discussing a physical health issue with your employer would have negative consequences?"""),
-html.P("""21. coworkers: Would you be willing to discuss a mental health issue with your coworkers?"""),
-html.P("""22. supervisor: Would you be willing to discuss a mental health issue with your direct supervisor(s)?"""),
-html.P("""23. mental_health_interview: Would you bring up a mental health issue with a potential employer in an interview?"""),
-html.P("""24. phys_health_interview: Would you bring up a physical health issue with a potential employer in an interview?"""),
-html.P("""25. mental_vs_physical: Do you feel that your employer takes mental health as seriously as physical health?"""),
-html.P("""26. obs consequence: Have you heard of or observed negative consequences for coworkers with mental health conditions in your workplace?"""),
-                    ],
-                    md=12,
-                ),
-        
-        html.Div(style={
-            'height':'100px'
-         }),
-            ]
-        )
-    ],
-    className="mt-6",
-)
+                                This data set is taken from Kaggle. This is a dataset from a 2014 survey (over 1200 responses recieved) that measures attitudes towards mental health and frequency of mental health disorders in workplaces. Goal
+                                Our goal is to find out the key factors to mental health problems in the workplace. We are going to perform some descriptive analysis on the survey data and predict treatment based on predictors. This will help in finding out methods to improve worker's experience in a tech workplace.
+                                """),
+                                html.P(
+                                                            """\
+                                Describing the Data:There are altogether 1200 rows i.e. observations and 27 Columns which are given below :\n
+                                """),
+                                html.P("""1. Timestamp """),
+                                html.P("""2. Age"""),
+                                html.P("""3. Gender"""),
+                                html.P("""4. Country"""),
+                                html.P("""5. state: If you live in the United States, which state or territory do you live in?"""),
+                                html.P("""6.self_employed: Are you self-employed?"""),
+                                html.P("""7. family_history: Do you have a family history of mental illness?"""),
+                                html.P("""8. treatment: Have you sought treatment for a mental health condition?"""),
+                                html.P("""9. work_interfere: If you have a mental health condition, do you feel that it interferes with your work?"""),
+                                html.P("""10. no_employees: How many employees does your company or organization have?"""),
+                                html.P("""11. remote_work: Do you work remotely (outside of an office) at least 50% of the time?"""),
+                                html.P("""12. tech_company: Is your employer primarily a tech company/organization?"""),
+                                html.P("""13. benefits: Does your employer provide mental health benefits?"""),
+                                html.P("""14. care_options: Do you know the options for mental health care your employer provides?"""),
+                                html.P("""15. wellness_program: Has your employer ever discussed mental health as part of an employee wellness program?"""),
+                                html.P("""16. seek_help: Does your employer provide resources to learn more about mental health issues and how to seek help?"""),
+                                html.P("""17. anonymity: Is your anonymity protected if you choose to take advantage of mental health or substance abuse treatment resources?"""),
+                                html.P("""18. leave: How easy is it for you to take medical leave for a mental health condition?"""),
+                                html.P("""19. mental_health_consequence: Do you think that discussing a mental health issue with your employer would have negative consequences?"""),
+                                html.P("""20. phys_health_consequence: Do you think that discussing a physical health issue with your employer would have negative consequences?"""),
+                                html.P("""21. coworkers: Would you be willing to discuss a mental health issue with your coworkers?"""),
+                                html.P("""22. supervisor: Would you be willing to discuss a mental health issue with your direct supervisor(s)?"""),
+                                html.P("""23. mental_health_interview: Would you bring up a mental health issue with a potential employer in an interview?"""),
+                                html.P("""24. phys_health_interview: Would you bring up a physical health issue with a potential employer in an interview?"""),
+                                html.P("""25. mental_vs_physical: Do you feel that your employer takes mental health as seriously as physical health?"""),
+                                html.P("""26. obs consequence: Have you heard of or observed negative consequences for coworkers with mental health conditions in your workplace?"""),
+                                ],
+                                md=12,
+                            ),
+
+                    html.Div(style={
+                        'height':'100px'
+                     }),
+                        ]
+                    )
+                ],
+                className="mt-6",
+            )
 
 
 explore_data= dbc.Container(
@@ -192,22 +193,22 @@ explore_data= dbc.Container(
             ),
         
         ]),
-    html.Div(style={
-        'height':'100px'
-    }),
-    html.Hr(),
-    html.H2('Summary:'),
-    html.H3('For Employers –'),
-    html.P('-    More than 50% of employees are suffering from mental health issues. So, employers should mandate the provision health programs to its employees'),
-    html.P('-    Allow flexible work environment – Flexible scheduling, Modified break schedule, Work from home/Flexi-place'),
-    html.P('-    Provide day-to-day guidance and feedback. Also, positive praise and reinforcement will be beneficial to employees'),
-    html.H3('For Employees –'),
-    html.P('-    Employees should talk to employers about their mental health issues so that they can aid them with benefit provisions like working from home, extra leaves etc.'),
-    html.P('-    Employees should be aware of their health coverage and aid programs provided by their employer and should actively participate in any wellness program.'),
-    html.P('-    Proper feedback should be given related to effectiveness of the employer’s health program while leaving the organization. This might help in improving existing health policies.'),
-    html.Div(style={
-        'height':'100px'
-    }),
+        html.Div(style={
+            'height':'100px'
+        }),
+        html.Hr(),
+        html.H2('Summary:'),
+        html.H3('For Employers –'),
+        html.P('-    More than 50% of employees are suffering from mental health issues. So, employers should mandate the provision health programs to its employees'),
+        html.P('-    Allow flexible work environment – Flexible scheduling, Modified break schedule, Work from home/Flexi-place'),
+        html.P('-    Provide day-to-day guidance and feedback. Also, positive praise and reinforcement will be beneficial to employees'),
+        html.H3('For Employees –'),
+        html.P('-    Employees should talk to employers about their mental health issues so that they can aid them with benefit provisions like working from home, extra leaves etc.'),
+        html.P('-    Employees should be aware of their health coverage and aid programs provided by their employer and should actively participate in any wellness program.'),
+        html.P('-    Proper feedback should be given related to effectiveness of the employer’s health program while leaving the organization. This might help in improving existing health policies.'),
+        html.Div(style={
+            'height':'100px'
+        }),
     ]
 )
 
@@ -340,7 +341,6 @@ app.layout = html.Div([
     dcc.Location(id='url', refresh=False),
     html.Div(id='page-content')
 ])
-
 
 
 # Update the index
